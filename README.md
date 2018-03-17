@@ -49,7 +49,7 @@ $ mvn spring-boot:run -Dspring-boot.run.profiles=prod
 - Request type :  POST
 - List of paramaters
 
-| Parameters | README |
+| Parameters | Description |
 | ------ | ------ |
 | requestId | Unique identifier for the request |
 | name | Name of the twitter account |
