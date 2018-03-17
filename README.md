@@ -48,6 +48,7 @@ $ mvn spring-boot:run -Dspring-boot.run.profiles=prod
 > http://localhost:8080/getvideo
 - Request type :  POST
 - List of paramaters
+
 | Parameters | README |
 | ------ | ------ |
 | requestId | Unique identifier for the request |
@@ -65,4 +66,4 @@ $ mvn spring-boot:run -Dspring-boot.run.profiles=prod
 | background_picture_url | Background picture URL |
 | tweets_content | '####' separated list of tweets for the video |
 - Output
-- Success : returns the mov file 
+Success : returns the mov file 
