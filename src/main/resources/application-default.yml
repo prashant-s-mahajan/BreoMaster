@@ -1,0 +1,5 @@
+app:
+ audioStorage: target/audio/
+ profileScript: target/script-resources/profile_master.sh
+ tweetsScript: target/script-resources/tweets.sh
+ videoScript: target/script-resources/video.sh

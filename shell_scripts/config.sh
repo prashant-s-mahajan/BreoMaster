@@ -1,0 +1,23 @@
+# Width and height of the profile box
+profile_bwidth=1000
+profile_bheight=333 
+name_bwidth=300
+name_bheight=100
+handle_bwidth=300
+handle_bheight=100
+bio_bwidth=300
+bio_bheight=120
+location_bwidth=300
+location_bheight=80
+website_bwidth=300
+website_bheight=80
+joined_date_bwidth=300
+joined_date_bheight=80
+tweets_bwidth=300
+tweets_bheight=80
+following_bwidth=300
+following_bheight=80
+followers_bwidth=300
+followers_bheight=80
+likes_bwidth=300
+likes_bheight=80
