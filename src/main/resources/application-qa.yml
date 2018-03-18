@@ -3,3 +3,18 @@ app:
  profileScript: target/script-resources/profile_master.sh
  tweetsScript: target/script-resources/tweets.sh
  videoScript: target/script-resources/video.sh
+ cleanUpScript: target/script-resources/clean_up.sh 
+ 
+server:
+ port: 8090
+ 
+keycloak:
+  realm: breo-realm
+  auth-server-url: http://localhost:8080/auth
+  resource: video_rest_api
+  ssl-required: external
+  bearer-only: true
+  credentials:
+    secret: 3e55ca2a-d228-456a-8b46-710edb93f1ca
+  use-resource-role-mappings: false
+  confidential-port: 0 

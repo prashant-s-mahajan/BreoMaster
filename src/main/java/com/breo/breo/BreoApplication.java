@@ -10,6 +10,5 @@ public class BreoApplication {
   public static void main(String[] args) {
     ApplicationContext context = SpringApplication.run(BreoApplication.class, args);
     System.out.println("Contains A  " + context.containsBeanDefinition("config"));
-
   }
 }

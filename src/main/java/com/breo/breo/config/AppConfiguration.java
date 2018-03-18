@@ -11,6 +11,7 @@ public class AppConfiguration {
   private String tweetsScript;
   private String videoScript;
   private String audioStorage;
+  private String cleanUpScript;
   
   public AppConfiguration(){
     System.out.println("In the App configuration");
@@ -46,5 +47,13 @@ public class AppConfiguration {
 
   public void setAudioStorage(String audioStorage) {
     this.audioStorage = audioStorage;
+  }
+
+  public String getCleanUpScript() {
+    return cleanUpScript;
+  }
+
+  public void setCleanUpScript(String cleanUpScript) {
+    this.cleanUpScript = cleanUpScript;
   }
 }

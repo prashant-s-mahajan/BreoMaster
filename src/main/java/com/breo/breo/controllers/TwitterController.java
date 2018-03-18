@@ -47,12 +47,6 @@ public class TwitterController {
     shellCommand.createVideo(requestId, backgroundTrack);
     shellCommand.clean(requestId);
 
-    /*
-     * return "Hello\n" + requestId + "\n" + name + "\n" + twitterHandle + "\n" + bio + "\n" +
-     * location + "\n" + website + "\n" + dateJoined + "\n" + tweetCount + "\n" + following + "\n" +
-     * followers + "\n" + likes + "\n" + profilePictureURL + "\n" + backgroundPictureURL + "\n" +
-     * tweetsContent;
-     */
     response.setHeader("Content-Disposition", "attachment; filename=myfile.mov");
     return new FileSystemResource(requestId + "/final.mov");
   }
