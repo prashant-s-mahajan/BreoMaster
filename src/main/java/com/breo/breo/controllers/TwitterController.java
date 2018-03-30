@@ -45,8 +45,41 @@ public class TwitterController {
     shellCommand.createTweetImages(requestId, tweetsContent, backgroundPictureURL);
 
     shellCommand.createVideo(requestId, backgroundTrack);
-    shellCommand.clean(requestId);
+    //shellCommand.clean(requestId);
 
+    response.setHeader("Content-Disposition", "attachment; filename=myfile.mov");
+    return new FileSystemResource(requestId + "/final.mov");
+  }
+  
+  @RequestMapping(value = "/generatevideo", method = RequestMethod.POST)
+  public void generateVideo(@RequestParam("requestId") String requestId,
+      @RequestParam("name") String name, @RequestParam("twitter_handle") String twitterHandle,
+      @RequestParam("bio") String bio, @RequestParam("location") String location,
+      @RequestParam("website") String website, @RequestParam("date_joined") String dateJoined,
+      @RequestParam("tweet_count") String tweetCount, @RequestParam("following") String following,
+      @RequestParam("followers") String followers, @RequestParam("likes") String likes,
+      @RequestParam("profile_picture_url") String profilePictureURL,
+      @RequestParam("background_picture_url") String backgroundPictureURL,
+      @RequestParam("tweets_content") String tweetsContent,
+      @RequestParam("background_track") String backgroundTrack, HttpServletResponse response) {
+
+    shellCommand.createProfile(requestId, profilePictureURL, name, twitterHandle, bio, location,
+        website, dateJoined, tweetCount, following, followers, likes, tweetsContent,
+        backgroundPictureURL, backgroundTrack);
+
+    shellCommand.createTweetImages(requestId, tweetsContent, backgroundPictureURL);
+
+    shellCommand.createVideo(requestId, backgroundTrack);
+    shellCommand.clean(requestId);
+    
+    return;
+
+    //response.setHeader("Content-Disposition", "attachment; filename=myfile.mov");
+    //return new FileSystemResource(requestId + "/final.mov");
+  }
+  
+  @RequestMapping(value = "/getfile", method = RequestMethod.GET)
+  public FileSystemResource getFile(@RequestParam("requestId") String requestId,HttpServletResponse response) {
     response.setHeader("Content-Disposition", "attachment; filename=myfile.mov");
     return new FileSystemResource(requestId + "/final.mov");
   }

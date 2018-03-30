@@ -12,7 +12,19 @@ echo $count
 
 # Check if it's the first tweet
 if [ "$count" -eq 1 ]
-then 
+then
+	if [ "$background_image" == "null" ]; 
+	then
+		# Resize the background image
+		 convert -size 1000x400 xc:black "${request_id}/background_dark".jpeg
+	else
+		# Resize the background image
+		convert ${background_image} -resize 1000x400 "${request_id}/background_dark".jpeg
+
+		# Increase the darkness of the background image
+		convert "${request_id}/background_dark".jpeg +level 20% "${request_id}/background_dark".jpeg
+	fi
+ 
 	# Resize the background image
 	convert ${background_image} -resize 1000x400 "${request_id}/background_dark".jpeg
 

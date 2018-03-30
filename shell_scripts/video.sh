@@ -24,4 +24,4 @@ ffmpeg -y -f concat -safe 0 -i "${request_id}/temp.txt" -codec copy "${request_i
 video_length=`ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "${request_id}/final.mp4"`
 
 # Add the audio track
-ffmpeg -y -i "${request_id}/final.mp4" -i $sound_track -codec copy -r 1 -t 24 "${request_id}/final.mov"
+ffmpeg -y -i "${request_id}/final.mp4" -i $sound_track -codec copy -r 1 -t $video_length "${request_id}/final.mov"

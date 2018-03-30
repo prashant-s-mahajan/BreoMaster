@@ -6,7 +6,7 @@ app:
  cleanUpScript: target/script-resources/clean_up.sh
   
 server:
- port: 8090
+ port: 8070
  
 keycloak:
   realm: breo-realm

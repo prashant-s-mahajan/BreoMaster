@@ -38,7 +38,17 @@ convert -background none -size "${handle_bwidth}"x"${handle_bheight}" -font Verd
 composite -geometry  +350+35 "${request_id}/handle".gif "${request_id}/profile".gif "${request_id}/profile".gif
 
 # Generate the image with bio
-convert -background none -size "${bio_bwidth}"x"${bio_bheight}" -font Verdana -fill white -pointsize 16  -gravity West caption:"${bio}" "${request_id}/bio".gif
+# First check the font size 
+font_size=`convert -background none -size "${bio_bwidth}"x"${bio_bheight}" -font Verdana -fill white -gravity West caption:"${bio}" -format "%[caption:pointsize]" info:`
+echo "Font size:${font_size}"
+if [ "$font_size" -gt 16 ]
+then
+	echo "I am here"
+	convert -background none -size "${bio_bwidth}"x"${bio_bheight}" -font Verdana -fill white -pointsize 16 -gravity West caption:"${bio}" "${request_id}/bio".gif
+else
+	convert -background none -size "${bio_bwidth}"x"${bio_bheight}" -font Verdana -fill white -gravity West caption:"${bio}" "${request_id}/bio".gif
+fi
+
 # Place the bio on the image
 composite -geometry  +350+105 "${request_id}/bio".gif "${request_id}/profile".gif "${request_id}/profile".gif
 
