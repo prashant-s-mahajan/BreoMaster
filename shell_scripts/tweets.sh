@@ -22,14 +22,14 @@ then
 		convert ${background_image} -resize 1000x400 "${request_id}/background_dark".jpeg
 
 		# Increase the darkness of the background image
-		convert "${request_id}/background_dark".jpeg +level 20% "${request_id}/background_dark".jpeg
+		# convert "${request_id}/background_dark".jpeg +level 20% "${request_id}/background_dark".jpeg
 	fi
  
 	# Resize the background image
-	convert ${background_image} -resize 1000x400 "${request_id}/background_dark".jpeg
+	# convert ${background_image} -resize 1000x400 "${request_id}/background_dark".jpeg
 
 	# Increase the darkness of the background image
-	convert "${request_id}/background_dark".jpeg +level 20% "${request_id}/background_dark".jpeg
+	# convert "${request_id}/background_dark".jpeg +level 20% "${request_id}/background_dark".jpeg
 fi
 
 # Generate the image
