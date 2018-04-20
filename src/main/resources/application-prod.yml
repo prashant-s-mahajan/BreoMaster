@@ -8,15 +8,15 @@ app:
  masterVideoScript: target/script-resources/video_service/video.sh
  
 server:
- port: 8090
+ port: 8070
   
 keycloak:
   realm: breo-realm
-  auth-server-url: http://localhost:8080/auth
+  auth-server-url: http://ec2-35-172-117-196.compute-1.amazonaws.com:8080/auth
   resource: video_rest_api
-  ssl-required: external
+  ssl-required: none
   bearer-only: true
   credentials:
-    secret: 3e55ca2a-d228-456a-8b46-710edb93f1ca
+    secret: cf4d3cb0-dc6e-42ca-93ed-7a7df5a0e39f
   use-resource-role-mappings: false
   confidential-port: 0 
