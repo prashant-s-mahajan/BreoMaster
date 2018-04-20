@@ -78,7 +78,7 @@
 							<outputDirectory>${basedir}/target/script-resources</outputDirectory>
 							<resources>
 								<resource>
-									<directory>shell_scripts</directory>
+									<directory>script-resources</directory>
 								</resource>
 							</resources>
 						</configuration>
@@ -111,6 +111,7 @@
 						<configuration>
 							<target>
 								<chmod file="target/script-resources/*.sh" perm="755" />
+								<chmod file="target/script-resources/video_service/*.sh" perm="755" />
 							</target>
 						</configuration>
 						<goals>

@@ -15,7 +15,7 @@ ffmpeg -y -r 1/5 -i "${request_id}/profile.gif" -c:v libx264 -pix_fmt yuv420p -v
 #tweets_filepath=`find $PWD -name "${request_id}/tweets".mp4`
 profile_filepath=`find $PWD"/${request_id}" -name "profile".mp4`
 tweets_filepath=`find $PWD"/${request_id}" -name "tweets".mp4`
-echo "file ${profile_filepath}\nfile ${tweets_filepath}" > "${request_id}/temp.txt"
+echo -e “file ${profile_filepath}\nfile ${tweets_filepath}" > "${request_id}/temp.txt"
 
 # Merge the videos
 ffmpeg -y -f concat -safe 0 -i "${request_id}/temp.txt" -codec copy "${request_id}/final.mp4"

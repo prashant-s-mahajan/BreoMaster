@@ -12,6 +12,8 @@ public class AppConfiguration {
   private String videoScript;
   private String audioStorage;
   private String cleanUpScript;
+  private String masterVideoScript;
+  private String frameScript;
   
   public AppConfiguration(){
     System.out.println("In the App configuration");
@@ -55,5 +57,21 @@ public class AppConfiguration {
 
   public void setCleanUpScript(String cleanUpScript) {
     this.cleanUpScript = cleanUpScript;
+  }
+
+  public String getMasterVideoScript() {
+    return masterVideoScript;
+  }
+
+  public void setMasterVideoScript(String masterVideoScript) {
+    this.masterVideoScript = masterVideoScript;
+  }
+
+  public String getFrameScript() {
+    return frameScript;
+  }
+
+  public void setFrameScript(String frameScript) {
+    this.frameScript = frameScript;
   }
 }

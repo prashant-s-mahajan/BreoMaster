@@ -4,6 +4,8 @@ app:
  tweetsScript: target/script-resources/tweets.sh
  videoScript: target/script-resources/video.sh
  cleanUpScript: target/script-resources/clean_up.sh
+ frameScript: target/script-resources/video_service/master.sh
+ masterVideoScript: target/script-resources/video_service/video.sh
   
 server:
  port: 8070
