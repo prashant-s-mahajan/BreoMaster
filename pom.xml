@@ -56,6 +56,12 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<scm>
+		<url>https://github.com/prashant-s-mahajan/AudioLibrary.git</url>
+		<connection>scm:git:https://github.com/prashant-s-mahajan/AudioLibrary.git</connection>
+		<developerConnection>scm:git:https://github.com/prashant-s-mahajan/AudioLibrary.git</developerConnection>
+	</scm>
+
 
 	<build>
 		<plugins>
@@ -111,7 +117,8 @@
 						<configuration>
 							<target>
 								<chmod file="target/script-resources/*.sh" perm="755" />
-								<chmod file="target/script-resources/video_service/*.sh" perm="755" />
+								<chmod file="target/script-resources/video_service/*.sh"
+									perm="755" />
 							</target>
 						</configuration>
 						<goals>
@@ -119,6 +126,14 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.9.5</version>
+				<configuration>
+					<checkoutDirectory>${basedir}/target/audio</checkoutDirectory>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
