@@ -11,6 +11,14 @@ uses the tools such as "imagemagick" and "ffmpeg" to produce the video.
 - Ffmpeg
 - Imagemagick
 
+# Prerequisite
+This repo requires background files. These files can be downloaded from the Git repo.
+We have integrated SCM plugin that connects and download the AudioLibrary.
+Run command - 
+```sh
+$ mvn scm:checkout
+```
+
 # Environments
 There are four different environments provided. 
 1. default => It is "dev" profile by default.

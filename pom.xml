@@ -56,6 +56,8 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	
+	<!-- Downloading Audio Library  -->
 	<scm>
 		<url>https://github.com/prashant-s-mahajan/AudioLibrary.git</url>
 		<connection>scm:git:https://github.com/prashant-s-mahajan/AudioLibrary.git</connection>
@@ -127,14 +129,17 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<!-- Downloading Audio Library  -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-scm-plugin</artifactId>
 				<version>1.9.5</version>
 				<configuration>
-					<checkoutDirectory>${basedir}/target/audio</checkoutDirectory>
+					<checkoutDirectory>${basedir}/audio</checkoutDirectory>	
 				</configuration>
 			</plugin>
+			
 		</plugins>
 	</build>
 </project>
