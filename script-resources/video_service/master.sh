@@ -11,12 +11,19 @@ font_color=$7
 width=$8
 height=$9
 position=${10}
+videoWidth=${11}
+videoHeight=${12}
 
 # create a directory
 mkdir -p "temp/${request_id}"
 
 # download the image
 wget $background_image_url -O "temp/${request_id}/${index}.jpeg"
+
+if [ "${videoWidth}" != "" -a "${videoHeight}" != "" ] 
+then
+	convert "temp/${request_id}/${index}.jpeg" -resize ${videoWidth}x${videoHeight}\! "temp/${request_id}/${index}.jpeg"
+fi
 
 # darken or brighten the image
 convert "temp/${request_id}/${index}.jpeg" -brightness-contrast $brightness "temp/${request_id}/${index}.jpeg"

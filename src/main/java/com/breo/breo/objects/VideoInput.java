@@ -5,9 +5,12 @@ import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+import lombok.Data;
+
 // class added to wrap the Frame list. It will be used to apply the @Valid annotation 
 // which only works on the Java Bean and not on the pure list.
 // https://stackoverflow.com/questions/17207766/spring-mvc-valid-on-list-of-beans-in-rest-service
+@Data
 public class VideoInput {
 
   @Valid
@@ -15,20 +18,7 @@ public class VideoInput {
   
   @NotNull
   private String backgroundTrack;
+  
+  private VideoProperties videoProperties;
 
-  public List<Frame> getFrameList() {
-    return frameList;
-  }
-
-  public void setFrameList(List<Frame> frameList) {
-    this.frameList = frameList;
-  }
-
-  public String getBackgroundTrack() {
-    return backgroundTrack;
-  }
-
-  public void setBackgroundTrack(String backgroundTrack) {
-    this.backgroundTrack = backgroundTrack;
-  }
 }

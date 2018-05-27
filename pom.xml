@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -43,6 +44,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
 	</dependencies>
 
 	<dependencyManagement>
@@ -56,8 +65,8 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
-	<!-- Downloading Audio Library  -->
+
+	<!-- Downloading Audio Library -->
 	<scm>
 		<url>https://github.com/prashant-s-mahajan/AudioLibrary.git</url>
 		<connection>scm:git:https://github.com/prashant-s-mahajan/AudioLibrary.git</connection>
@@ -129,17 +138,17 @@
 					</execution>
 				</executions>
 			</plugin>
-			
-			<!-- Downloading Audio Library  -->
+
+			<!-- Downloading Audio Library -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-scm-plugin</artifactId>
 				<version>1.9.5</version>
 				<configuration>
-					<checkoutDirectory>${basedir}/audio</checkoutDirectory>	
+					<checkoutDirectory>${basedir}/audio</checkoutDirectory>
 				</configuration>
 			</plugin>
-			
+
 		</plugins>
 	</build>
 </project>
