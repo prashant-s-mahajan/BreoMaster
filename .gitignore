@@ -3,4 +3,5 @@
 .settings/
 audio/
 target/
+script-resources/video_service/temp/*
 

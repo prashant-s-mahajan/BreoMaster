@@ -17,14 +17,18 @@ import com.breo.breo.service.VideoService;
 @EnableAutoConfiguration
 public class VideoServiceController {
 
-  @Autowired
-  private VideoService videoService;
+	@Autowired
+	private VideoService videoService;
 
-  @RequestMapping(value = "/v1/video/create", method = RequestMethod.POST)
-  public VideoInput createVideo(@RequestParam("requestId") String requestId,
-      @RequestBody @Valid VideoInput videoInput) {
-    videoService.createVideo(requestId, videoInput.getFrameList(), videoInput.getBackgroundTrack());
-    System.out.println(videoInput.getFrameList().size());
-    return videoInput;
-  }
+	@RequestMapping(value = "/v1/video/create", method = RequestMethod.POST)
+	public VideoInput createVideo(@RequestParam("requestId") String requestId,
+			@RequestBody @Valid VideoInput videoInput) {
+		if (null == videoInput.getVideoProperties())
+			videoService.createVideo(requestId, videoInput.getFrameList(), videoInput.getBackgroundTrack());
+		else
+			videoService.createVideo(requestId, videoInput.getFrameList(), videoInput.getBackgroundTrack(),
+					videoInput.getVideoProperties());
+		System.out.println(videoInput.getFrameList().size());
+		return videoInput;
+	}
 }
